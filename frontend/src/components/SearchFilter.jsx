@@ -1,24 +1,25 @@
+import {useEffect} from 'react'
 const CATEGORIES = ['Electronics', 'Furniture', 'Vehicles', 'Clothes', 'Bags', 'Stationery', 'Other'];
 
 const SearchFilter = ({ filters, setFilters, onSearch }) => {
   const handleChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch();
   };
 
   const handleCategoryClick = (cat) => {
-    const newFilters = { ...filters, category: cat };
-    setFilters(newFilters);
-
-    // Directly trigger search with the new filters
-    // If your onSearch function fetches data based on the 'filters' state, 
-    // you may need to pass the newFilters object directly to it.
-    onSearch(newFilters);
+    setFilters({
+      ...filters,
+      category: cat,
+    });
   };
+  useEffect(() => {
+    onSearch(filters);
+  }, [filters]);  
 
   return (
     <form className="search-filter" onSubmit={handleSubmit}>
