@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../api/axios';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/Authcontext';
 import ProductCard from '../components/ProductCard';
 
 const Profile = () => {

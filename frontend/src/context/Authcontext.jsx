@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import api from '../api/axios';
 
-const AuthContext = createContext(null);
+const Authcontext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
@@ -37,10 +37,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, updateUserInStorage }}>
+    <Authcontext.Provider value={{ user, login, register, logout, updateUserInStorage }}>
       {children}
-    </AuthContext.Provider>
+    </Authcontext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => useContext(Authcontext);

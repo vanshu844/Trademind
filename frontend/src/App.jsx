@@ -9,7 +9,7 @@ import EditProduct from './pages/EditProduct';
 import ProductDetail from './pages/ProductDetail';
 import Wishlist from './pages/Wishlist';
 import Profile from './pages/Profile';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from './context/Authcontext';
 
 function App() {
 
