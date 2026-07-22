@@ -15,7 +15,12 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://trademind-blond.vercel.app"
+  ]
+})); 
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
@@ -33,4 +38,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-export default app;
+module.exports = app;
