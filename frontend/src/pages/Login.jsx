@@ -14,14 +14,14 @@ const Login = () => {
     setError('');
     try {
       await login(email, password);
-      navigate('/home');
+      navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
     }
   };
 
   return (
-    <div className="page auth-page">
+    <div className="page">
       <h1>Log in</h1>
       <form onSubmit={handleSubmit} className="form">
         {error && <p className="error">{error}</p>}

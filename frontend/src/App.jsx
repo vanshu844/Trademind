@@ -9,6 +9,8 @@ import EditProduct from './pages/EditProduct';
 import ProductDetail from './pages/ProductDetail';
 import Wishlist from './pages/Wishlist';
 import Profile from './pages/Profile';
+import Chat from './pages/Chat';
+import OrderPlaced from './pages/OrderPlaced';
 import { useAuth } from './context/Authcontext';
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
         <Route path="/edit/:id" element={<ProtectedRoute><EditProduct /></ProtectedRoute>} />
         <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+        <Route path="/chat/:productId/:otherUserId" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
+        <Route path="/order-placed" element={<ProtectedRoute><OrderPlaced /></ProtectedRoute>} />
       </Routes>
     </>
   );
